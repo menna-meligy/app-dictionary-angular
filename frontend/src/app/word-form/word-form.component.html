@@ -1,0 +1,40 @@
+<div class="body">
+  <div class="text">
+    <h1>Dictionary App / Translate Word</h1>
+  </div>
+
+  <div class="page">
+    <div class="word-form">
+      <form [ngClass]="{ submitted: submitted }">
+        <div class="form-group">
+          <!-- <label for="word">Word</label> -->
+          <input
+            type="text"
+            id="word"
+            placeholder="Type your word here"
+            [(ngModel)]="word"
+            name="word"
+            required
+          />
+        </div>
+
+        <button type="submit" (click)="onSubmit()">Translate</button>
+      </form>
+
+      <div *ngIf="definitions.length > 0">
+        <h3>Definitions:</h3>
+        <ul>
+          <li *ngFor="let meaning of definitions">
+            <h4>{{ meaning.partOfSpeech }}</h4>
+            <ul>
+              <li *ngFor="let definition of meaning.definitions">
+                <p>{{ definition.definition }}</p>
+                <p><strong>Example:</strong> {{ definition.example }}</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div>
+  <!-- result of translation -->
+  <div class="container-fluid w-100">
+    <div class="">
+      <div *ngFor="let translation of translationData" class="clearfix">
+        <div class="card card-footer p-3 m-2">
+          <div class="position-relative">
+            {{ translation.text }}
+          </div>
+          <div class="d-inline top-0 end-1 text-primary">
+            <span class="text-dark pe-2">Language :</span
+            >{{ translation.targetLang }}
+          </div>
+
+          <div
+            class="btn btn-warning-light position-absolute top-0 end-0 text-danger"
+            (click)="deleteTranslation(translation._id)"
+          >
+            Delete
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
