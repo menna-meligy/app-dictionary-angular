@@ -1,0 +1,12 @@
+{
+    "/corsapi/*": {
+      "target": "https://cors-anywhere.herokuapp.com/",
+      "secure": false,
+      "logLevel": "debug",
+      "pathRewrite": {
+        "^/corsapi": ""
+      },
+      "changeOrigin": true
+    }
+  }
+  

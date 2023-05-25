@@ -1,0 +1,46 @@
+<nav id="body">
+  <div>
+    <div>
+      <div class="first_box">
+        <label for="wordInput">English Word or Sentence:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="wordInput"
+          [(ngModel)]="word"
+          name="word"
+          placeholder="Enter your word or sentence"
+        />
+        <button
+          class="btn btn-primary mt-2"
+          id="saveButton"
+          (click)="saveWord()"
+          type="submit"
+        >
+          Save
+        </button>
+        <div>
+          <label for="targetLangSelect">Target Language:</label>
+          <select
+            class="custom-select"
+            id="targetLangSelect"
+            (change)="changeLang($event)"
+          >
+            <option>Selcet Lang</option>
+            <option value="en" [selected]="lang == 'en'">English</option>
+            <option value="de" [selected]="lang == 'de'">Deutsch</option>
+            <option value="ar" [selected]="lang == 'ar'">عربي</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="answer">
+    <!-- displaying the word or sentence that is saved -->
+    <div>{{ savedWord }}</div>
+
+    <div class="container-fluid">
+      <app-backend-result></app-backend-result>
+    </div>
+  </div>
+</nav>

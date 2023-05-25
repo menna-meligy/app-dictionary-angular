@@ -1,0 +1,23 @@
+<div class="translation-result">
+  <h2>Translation Result</h2>
+  <!-- displaying the languages optiongs and displaying them when it is retrived from the api -->
+  <div *ngIf="translation">
+    <p><strong>Translated Word:</strong> {{ translation.word }}</p>
+    <p><strong>Source Language:</strong> {{ translation.sourceLang }}</p>
+    <p><strong>Target Language:</strong> {{ translation.targetLang }}</p>
+    <div class="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+    <div *ngIf="translation.synonyms">
+      <h3>Synonyms</h3>
+    </div>
+
+    <div *ngIf="translation.antonyms">
+      <h3>Antonyms</h3>
+    </div>
+
+    <div *ngIf="translation.samplePhrases">
+      <h3>Sample Phrases</h3>
+    </div>
+  </div>
+</div>

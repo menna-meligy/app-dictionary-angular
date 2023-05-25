@@ -1,0 +1,39 @@
+<div class="sidebar">
+  <div class="user-info">
+    <img
+      class="profile-pic"
+      src="assets/images/icon-boy.png"
+      alt="Profile Picture"
+    />
+    <!-- Displaying the user's name -->
+    <div>
+      <div class="welcome-message">Welcome, {{ userName }}!</div>
+    </div>
+  </div>
+  <div class="sidebar-content">
+    <ul class="nav-options">
+      <!-- Sidebar navigation options -->
+      <li id="first-option">
+        <a
+          class="nav-options"
+          routerLink="/word-dictionary"
+          routerLinkActive="active"
+          >Word Dictionary</a
+        >
+      </li>
+      <li>
+        <a
+          class="nav-options"
+          routerLink="/translation"
+          routerLinkActive="active"
+          >Translation</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="content">
+  <!--  placeholder in Angular that is used to project content from the parent component 
+    into a child component. It allows the parent component to inject content dynamically into the child component -->
+  <ng-content></ng-content>
+</div>
